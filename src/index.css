@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Standard */
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+@font-face {
+    font-family: 'font-appleTypeWriter';
+    src: url(./assets/fonts/apple-ii-screen-typeface-font/AppleIiScreenTypeface-2aP3.ttf);
+}
+.font-ATW{
+    font-family: 'font-appleTypeWriter','Courier New', Courier, monospace;
+}
+@font-face {
+    font-family: 'font-geist';
+    src: url(./assets/fonts/saturnest/Saturnest.otf);
+}
+.font-GIT{
+    font-family: 'font-geist','Courier New', Courier, monospace;
+}
+.dot1{
+    animation: dot1 3.5s infinite ease-in-out;
+}
+.dot2{
+    animation: dot2 3.5s infinite ease-in-out;
+}
+@keyframes dot1 {
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+@keyframes dot2 {
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.navText:hover{
+    .navTextC{
+        height: 100%;
+    }
+}
+.bg-focus{
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+.cube-container{
+    perspective: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cube{
+    transition: all 1s;
+    width: 200px;
+    height: 200px;
+    position:relative;
+    transform-style: preserve-3d;
+    transform:  rotateX(0deg) rotateY(0deg);
+    animation: rotateCube 12s infinite ease-in-out;
+}
+
+.face{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.front { transform: rotateY(0deg) translateZ(100px); }
+.back { transform: rotateY(180deg) translateZ(100px); }
+.right { transform: rotateY(90deg) translateZ(100px); }
+.left { transform: rotateY(-90deg) translateZ(100px); }
+.top { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes rotateCube {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+  }
