@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import NavBar from '../navbar/NavBar'
 import WorkWithMe from '../workWithMe/WorkWithMe'
 import { darkState } from '../state/atom'
@@ -12,12 +12,35 @@ import { TbBrandReactNative } from "react-icons/tb";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiRecoil } from "react-icons/si";
 import Cube from '../cube/Cube'
+import { IoIosArrowDown } from "react-icons/io";
 const Home = () => {
     const dark = useRecoilValue(darkState)
+    const skill = useRef();
+    const intro = useRef();
+    const [click, setClick] = useState(false);
+
+    const handelScrollToSkill = () => {
+        if (click) {
+            intro.current.scrollIntoView(
+                {
+                    behavior: "smooth",
+                    block: "start",
+                }
+            )
+        } else {
+            skill.current.scrollIntoView(
+                {
+                    behavior: "smooth",
+                    block: "start",
+                }
+            )
+        }
+        setClick(!click)
+    }
     return (
-        <div className={`${dark ? 'bg-black text-white' : 'bg-white text-black'} transition-all duration-700 w-screen  mt-[8vh] flex justify-center`}>
+        <div className={`${dark ? 'bg-black text-white' : 'bg-white text-black'}  transition-all relative duration-700 w-screen  mt-[8vh]  flex flex-col items-center overflow-hidden`}>
             <NavBar />
-            <div className='w-full h-[92vh] flex '>
+            <div ref={intro} className='w-full h-[92vh] flex '>
                 <div className='w-2/3 font-GIT flex flex-col mt-[10%] p-4'>
                     <div className='text-[3rem] opacity-65'>Hi! I'm Thuyamyint.</div>
                     <div className='text-[1.8rem] flex items-center'>I'm a Beginner Full-Stack WEB <FaCode className='mx-4' /> Developer! & Mobile <TbDevicesCode className='mx-4' /> Creator!</div>
@@ -53,6 +76,17 @@ const Home = () => {
                 </div>
             </div>
             <WorkWithMe />
+            <div className={`transition-all duration-700 ${click ? 'top-[52%] rotate-180' : ' top-[35%]'} absolute font-GIT  justify-center cursor-pointer`} onClick={handelScrollToSkill}
+            >
+                <div className={`transition-all duration-700 text-[1.2rem] w-full ${click && 'rotate-180'}`}>{click ? 'Scroll Up' : 'Scroll Down'} </div>
+                <div className='flex justify-center text-[1.6rem] up'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
+                <div className='flex justify-center text-[1.6rem] mid'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
+                <div className='flex justify-center text-[1.6rem] end'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
+            </div>
+
+            <div ref={skill} className='w-full h-[100vh]'>
+
+            </div>
         </div>
     )
 }

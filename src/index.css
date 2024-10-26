@@ -11,7 +11,9 @@
 html {
     scroll-behavior: smooth;
   }
-
+body{
+    overflow: hidden;
+}
 @font-face {
     font-family: 'font-appleTypeWriter';
     src: url(./assets/fonts/apple-ii-screen-typeface-font/AppleIiScreenTypeface-2aP3.ttf);
@@ -77,7 +79,7 @@ html {
     backdrop-filter: blur(10px);
 }
 .cube-container{
-    perspective: 800px;
+    perspective: 1000px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,6 +92,9 @@ html {
     transform-style: preserve-3d;
     transform:  rotateX(0deg) rotateY(0deg);
     animation: rotateCube 12s infinite ease-in-out;
+    /* box-shadow: 0 0 30px rgba(0, 255, 255, 0.5),
+                0 0 60px rgba(0, 255, 255, 0.5),
+                0 0 90px rgba(0, 255, 255, 0.5); */
 }
 
 .face{
@@ -99,6 +104,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 .front { transform: rotateY(0deg) translateZ(100px); }
 .back { transform: rotateY(180deg) translateZ(100px); }
@@ -111,3 +117,12 @@ html {
     from { transform: rotateX(0deg) rotateY(0deg); }
     to { transform: rotateX(360deg) rotateY(360deg); }
   }
+.up{
+    animation: dot1 4s infinite ease-in-out;
+}
+.mid{
+    animation: dot2 8s infinite ease-in-out;
+}
+.end{
+    animation: dot1 12s infinite ease-in-out;
+}
