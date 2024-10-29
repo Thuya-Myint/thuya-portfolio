@@ -107,7 +107,7 @@ const Projects = () => {
 
                     <div className={`transition-all w-[70%] lms duration-500 cursor-pointer bg-opacity-15 hover:bg-opacity-25 p-4 rounded-sm ${dark ? 'bg-white' : 'bg-black'}`} onClick={() => handleProjectClick(4, 'Learning Management System (MutiCampaign)')}>
                         <div className='text-end'>Click to See Details</div>
-                        <div className='text-[1.2rem]'>Learning Management System (MutiCampaign)</div>
+                        <div className='text-[1.2rem]'>Learning Management System (MultiCampaign)</div>
                         <div className='flex items-center'><VscDebugBreakpointFunctionUnverified className={`mr-2 text-[2rem] ${dark ? 'text-red-700' : 'text-blue-700'}`} />
                             <div className=''>Functions</div>
                         </div>

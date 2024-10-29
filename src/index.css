@@ -5,7 +5,12 @@
 html {
     scroll-behavior: smooth;
   }
-
+.skill{
+    z-index: 1 !important;
+  }
+.overlay{
+    z-index: 50 !important; /* Ensuring the white div is above the map */
+}
 @font-face {
     font-family: 'font-appleTypeWriter';
     src: url(./assets/fonts/apple-ii-screen-typeface-font/AppleIiScreenTypeface-2aP3.ttf);
