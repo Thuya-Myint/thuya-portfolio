@@ -13,11 +13,28 @@ import { IoLogoFirebase } from "react-icons/io5";
 import { SiRecoil } from "react-icons/si";
 import Cube from '../cube/Cube'
 import { IoIosArrowDown } from "react-icons/io";
+import AbRadar from '../radar/AbRadar'
+import DonutChart from '../progress/DonutChart';
 const Home = () => {
     const dark = useRecoilValue(darkState)
     const skill = useRef();
     const intro = useRef();
     const [click, setClick] = useState(false);
+    const ability = {
+        'Java SE': 80,
+        'HTML': 90,
+        'CSS': 80,
+        'JavaScript': 70,
+        'C++': 40,
+        'C': 30,
+        'PHP': 75,
+        'SQL': 70,
+        'React': 75,
+        'React Native': 45,
+        'Node': 70,
+        'Recoil': 50,
+    };
+
 
     const handelScrollToSkill = () => {
         if (click) {
@@ -38,12 +55,12 @@ const Home = () => {
         setClick(!click)
     }
     return (
-        <div className={`${dark ? 'bg-black text-white' : 'bg-white text-black'}  transition-all relative duration-700 w-screen  mt-[8vh]  flex flex-col items-center overflow-hidden`}>
+        <div className={`${dark ? 'bg-black text-white' : 'bg-white text-black'}  transition-all relative duration-700 w-screen  flex flex-col items-center `}>
             <NavBar />
             <div ref={intro} className='w-full h-[92vh] flex '>
                 <div className='w-2/3 font-GIT flex flex-col mt-[10%] p-4'>
-                    <div className='text-[3rem] opacity-65'>Hi! I'm Thuyamyint.</div>
-                    <div className='text-[1.8rem] flex items-center'>I'm a Beginner Full-Stack WEB <FaCode className='mx-4' /> Developer! & Mobile <TbDevicesCode className='mx-4' /> Creator!</div>
+                    <div className='text-[2.5rem] opacity-65'>Hi! I'm Thuyamyint.</div>
+                    <div className='text-[1.5rem] flex items-center'>I'm a Beginner Full-Stack WEB <FaCode className='mx-4' /> Developer! & Mobile <TbDevicesCode className='mx-4' /> Creator!</div>
                     <div className='text-[1.4rem]'>
                         These are my main Languages!
                         <div className='w-full mt-2 flex items-center '>
@@ -75,16 +92,22 @@ const Home = () => {
                     <Cube />
                 </div>
             </div>
-            <WorkWithMe />
-            <div className={`transition-all duration-700 ${click ? 'top-[52%] rotate-180' : ' top-[35%]'} absolute font-GIT  justify-center cursor-pointer`} onClick={handelScrollToSkill}
+            <div className='w-full flex justify-end'>
+                <WorkWithMe />
+            </div>
+            <div className={`transition-all duration-700 ${click ? 'top-[52%] rotate-180' : ' top-[42%] rotate-0'} absolute font-GIT  justify-center cursor-pointer`} onClick={handelScrollToSkill}
             >
-                <div className={`transition-all duration-700 text-[1.2rem] w-full ${click && 'rotate-180'}`}>{click ? 'Scroll Up' : 'Scroll Down'} </div>
-                <div className='flex justify-center text-[1.6rem] up'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
-                <div className='flex justify-center text-[1.6rem] mid'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
-                <div className='flex justify-center text-[1.6rem] end'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
+                <div className={`transition-all duration-200 text-[1.2rem] w-full ${click && 'rotate-180'}`}>My Ability</div>
+                <div className=' transition-all duration-500 flex justify-center text-[1.6rem] up'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
+                <div className='transition-all duration-500 flex justify-center text-[1.6rem] mid'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
+                <div className='transition-all duration-500 flex justify-center text-[1.6rem] end'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
             </div>
 
-            <div ref={skill} className='w-full h-[100vh]'>
+            <div ref={skill} className='w-full h-[100vh] flex justify-center items-end'>
+                <div className={`w-[40%] h-[75%] text-center font-GIT `}>
+                    <div className={`transition-all p-2 text-[1.2rem] mb-2 duration-300 rounded-sm  ${dark ? ' bg-white text-black' : 'bg-black text-white'}`}>Programming Languages</div>
+                    <AbRadar ability={ability} />
+                </div>
 
             </div>
         </div>

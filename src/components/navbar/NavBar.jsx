@@ -3,7 +3,7 @@ import Toggle from '../toggle/Toggle'
 import { darkState } from '../state/atom'
 import { useRecoilState } from 'recoil'
 import { currentState } from '../state/atom'
-import { NavLinks } from '../constants/index'
+import { NavLinks } from '../constants'
 import { contactState } from '../state/atom'
 import { useNavigate } from 'react-router-dom'
 const NavBar = () => {

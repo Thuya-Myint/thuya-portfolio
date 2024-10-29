@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil'
 const WorkWithMe = () => {
     const [dark, setDark] = useRecoilState(darkState);
     return (
-        <div className={`transition-all font-GIT border-opacity-50 duration-200 fixed bottom-[5%] w-[200px] h-[40px] flex justify-between items-center p-4 rounded-md border-[1px] ${dark ? 'border-white text-white' : 'border-black text-black'}`}
+        <div className={`transition-all font-GIT border-opacity-50 duration-200 fixed bottom-[5%] w-[200px] h-[40px] flex justify-between items-center mr-4 p-4 rounded-md border-[1px] ${dark ? 'border-white text-white' : 'border-black text-black'}`}
             style={dark ? { boxShadow: `0px 0px 260px white` } : { boxShadow: `0px 0px 200px black` }}>
             <div className='w-[20%] relative flex items-center'>
                 <div className={`w-[10px] h-[10px] rounded-full ${dark ? 'bg-green-400' : 'bg-green-500'}  bg-opacity-55 absolute`}></div>
