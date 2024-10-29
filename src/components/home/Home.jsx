@@ -23,6 +23,7 @@ import { FaPython } from "react-icons/fa6";
 import { SiCplusplusbuilder } from "react-icons/si";
 
 const Home = () => {
+    const active = 1;
     const dark = useRecoilValue(darkState)
     const skill = useRef();
     const intro = useRef();
@@ -63,14 +64,14 @@ const Home = () => {
     }
     return (
         <div className={`${dark ? 'bg-black text-white' : 'bg-white text-black'}  transition-all relative duration-700 w-screen  flex flex-col items-center `}>
-            <NavBar />
+            <NavBar active={active} />
             <div ref={intro} className='w-full h-[92vh] flex '>
                 <div className='w-2/3 font-GIT flex flex-col mt-[10%] p-4'>
-                    <div className='text-[2.5rem] opacity-65'>Hi! I'm Thuyamyint.</div>
+                    <div className='text-[2.5rem] opacity-65'>Hello! My name is Thuyamyint.</div>
                     <div className='text-[1.5rem] flex items-center flex-wrap'>I'm a Beginner Full-Stack WEB <FaCode className='mx-2' /> Developer! , Mobile <TbDevicesCode className='mx-2' /> Creator! & StandAlone <FaComputer className='mx-2' /> Developer!
                     </div>
                     <div className='text-[1.4rem]'>
-                        These are my main Languages!
+                        My main Languages include following
                         <div className='w-full mt-2 flex items-center '>
                             <div className={`cursor-pointer transition-all duration-1000 w-[45px] h-[45px] rounded-full ${dark ? 'bg-blue-950' : 'bg-gray-100 '} flex items-center justify-center`}>
                                 <FaReact className=' text-[1.8rem] text-blue-600' />
@@ -99,7 +100,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='text-[1.4rem] mt-6'>
-                        Others Experience Languages!
+                        Other Individuals Have the Ability to Understand Languages!
                         <div className='w-full mt-2 flex items-center '>
                             <div className={`cursor-pointer transition-all duration-1000 w-[45px] h-[45px] rounded-full ${dark ? 'bg-blue-950' : 'bg-gray-100 '} flex items-center justify-center `}>
                                 <div className=' text-[1.8rem] font-semibold text-blue-600'>C</div>

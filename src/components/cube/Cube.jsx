@@ -9,6 +9,7 @@ import { darkState } from '../state/atom'
 import { useRecoilValue } from 'recoil';
 
 const Cube = () => {
+
     const dark = useRecoilValue(darkState);
     return (
         <div className='cube-container  w-[90%] h-[90%] flex items-center justify-center overflow-hidden'>
