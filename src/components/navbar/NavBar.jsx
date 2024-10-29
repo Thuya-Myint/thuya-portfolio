@@ -11,14 +11,13 @@ const NavBar = () => {
     const [current, setCurrent] = useRecoilState(currentState);
     const [contact, setContact] = useRecoilState(contactState);
     const navigate = useNavigate();
+    const activeTab = localStorage.getItem('tab');
 
     const handleCurrent = (name, path) => {
         setCurrent('')
         setCurrent(name)
         setContact(false)
-        if (name === 'CONTACT') {
-            setContact(!contact)
-        }
+        localStorage.setItem('tab', name)
         if (name === 'HOME') navigate('/')
         else navigate(path)
     }
@@ -32,7 +31,7 @@ const NavBar = () => {
                             onClick={() => handleCurrent(nav.name, nav.path)}
                         >
                             {nav.name}
-                            <div className={`transition-all bg-opacity-20 duration-500 absolute navTextC ${current === nav.name ? 'h-full' : 'h-0'} bottom-0 h-0  left-0 w-full ${dark ? 'bg-white' : 'bg-black'}`}></div>
+                            <div className={`transition-all bg-opacity-20 duration-500 absolute navTextC ${activeTab === nav.name ? 'h-full' : 'h-0'} bottom-0 h-0  left-0 w-full ${dark ? 'bg-white' : 'bg-black'}`}></div>
                         </div>
                     ))
                 }

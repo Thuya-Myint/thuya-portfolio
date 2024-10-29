@@ -5,18 +5,25 @@ export const NavLinks = [
         path: '/home'
     },
     {
-        id: 'nvl2',
-        name: 'WORK',
-        path: '/work'
-    },
-    {
         id: 'nvl3',
         name: 'PROJECT',
         path: '/project'
     },
+
+]
+export const Language = [
     {
-        id: 'nvl4',
-        name: 'CONTACT',
-        path: '/contact'
+        id: 'Japanese',
+        reading: 75,
+        writing: 70,
+        speaking: 55,
+        listening: 70
     },
+    {
+        id: 'English',
+        reading: 75,
+        writing: 70,
+        speaking: 60,
+        listening: 70
+    }
 ]

@@ -11,9 +11,7 @@
 html {
     scroll-behavior: smooth;
   }
-body{
-    overflow: hidden;
-}
+
 @font-face {
     font-family: 'font-appleTypeWriter';
     src: url(./assets/fonts/apple-ii-screen-typeface-font/AppleIiScreenTypeface-2aP3.ttf);
@@ -28,6 +26,7 @@ body{
 .font-GIT{
     font-family: 'font-geist','Courier New', Courier, monospace;
 }
+
 .dot1{
     animation: dot1 3.5s infinite ease-in-out;
 }

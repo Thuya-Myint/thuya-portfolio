@@ -14,7 +14,14 @@ import { SiRecoil } from "react-icons/si";
 import Cube from '../cube/Cube'
 import { IoIosArrowDown } from "react-icons/io";
 import AbRadar from '../radar/AbRadar'
-import DonutChart from '../progress/DonutChart';
+import Progress from '../progress/Progress'
+import { GrTechnology } from "react-icons/gr";
+import { TbLanguageHiragana } from "react-icons/tb";
+import { FaComputer } from "react-icons/fa6";
+import { FaJava } from "react-icons/fa6";
+import { FaPython } from "react-icons/fa6";
+import { SiCplusplusbuilder } from "react-icons/si";
+
 const Home = () => {
     const dark = useRecoilValue(darkState)
     const skill = useRef();
@@ -60,7 +67,8 @@ const Home = () => {
             <div ref={intro} className='w-full h-[92vh] flex '>
                 <div className='w-2/3 font-GIT flex flex-col mt-[10%] p-4'>
                     <div className='text-[2.5rem] opacity-65'>Hi! I'm Thuyamyint.</div>
-                    <div className='text-[1.5rem] flex items-center'>I'm a Beginner Full-Stack WEB <FaCode className='mx-4' /> Developer! & Mobile <TbDevicesCode className='mx-4' /> Creator!</div>
+                    <div className='text-[1.5rem] flex items-center flex-wrap'>I'm a Beginner Full-Stack WEB <FaCode className='mx-2' /> Developer! , Mobile <TbDevicesCode className='mx-2' /> Creator! & StandAlone <FaComputer className='mx-2' /> Developer!
+                    </div>
                     <div className='text-[1.4rem]'>
                         These are my main Languages!
                         <div className='w-full mt-2 flex items-center '>
@@ -85,8 +93,26 @@ const Home = () => {
                             <div className={`cursor-pointer transition-all duration-1000 ml-2 w-[45px] h-[45px] rounded-full ${dark ? 'bg-blue-950' : 'bg-gray-100 '} flex items-center justify-center`}>
                                 <SiRecoil className=' text-[1.8rem] text-blue-600' />
                             </div>
+                            <div className={`cursor-pointer transition-all duration-1000 w-[45px] h-[45px] rounded-full ${dark ? 'bg-blue-950' : 'bg-gray-100 '} ml-2 flex items-center justify-center`}>
+                                <FaJava className=' text-[1.8rem] text-blue-600' />
+                            </div>
                         </div>
                     </div>
+                    <div className='text-[1.4rem] mt-6'>
+                        Others Experience Languages!
+                        <div className='w-full mt-2 flex items-center '>
+                            <div className={`cursor-pointer transition-all duration-1000 w-[45px] h-[45px] rounded-full ${dark ? 'bg-blue-950' : 'bg-gray-100 '} flex items-center justify-center `}>
+                                <div className=' text-[1.8rem] font-semibold text-blue-600'>C</div>
+                            </div>
+                            <div className={`cursor-pointer transition-all duration-1000 ml-2 w-[45px] h-[45px] rounded-full ${dark ? 'bg-blue-950' : 'bg-gray-100 '} flex items-center justify-center`}>
+                                <SiCplusplusbuilder className=' text-[1.8rem] text-blue-600' />
+                            </div>
+                            <div className={`cursor-pointer transition-all duration-1000 w-[45px] h-[45px] rounded-full ${dark ? 'bg-blue-950' : 'bg-gray-100 '} flex items-center justify-center ml-2`}>
+                                <FaPython className={`text-[1.8rem] ${dark ? 'text-yellow-400' : 'text-yellow-500'} `} />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div className='w-1/3'>
                     <Cube />
@@ -103,10 +129,20 @@ const Home = () => {
                 <div className='transition-all duration-500 flex justify-center text-[1.6rem] end'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
             </div>
 
-            <div ref={skill} className='w-full h-[100vh] flex justify-center items-end'>
+            <div ref={skill} className='w-full h-[100vh] flex gap-2 justify-center items-end'>
                 <div className={`w-[40%] h-[75%] text-center font-GIT `}>
-                    <div className={`transition-all p-2 text-[1.2rem] mb-2 duration-300 rounded-sm  ${dark ? ' bg-white text-black' : 'bg-black text-white'}`}>Programming Languages</div>
+                    <div className={`transition-all flex items-center justify-between p-2 text-[1.2rem] mb-2 duration-300 rounded-sm  ${dark ? ' bg-white text-black' : 'bg-black text-white'}`}>
+                        Programming Languages
+                        <GrTechnology className={`text-[1.3rem] ${dark ? 'text-red-700' : 'text-blue-500'}`} />
+                    </div>
                     <AbRadar ability={ability} />
+                </div>
+                <div className={`w-[40%] h-[75%] text-center font-GIT `}>
+                    <div className={`transition-all flex items-center justify-between p-2 text-[1.2rem] mb-2 duration-300 rounded-sm  ${dark ? ' bg-white text-black' : 'bg-black text-white'}`}>
+                        Linguistics
+                        <TbLanguageHiragana className={`text-[1.3rem] ${dark ? 'text-red-700' : 'text-blue-500'}`} />
+                    </div>
+                    <Progress />
                 </div>
 
             </div>
