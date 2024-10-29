@@ -119,10 +119,10 @@ const Home = () => {
                     <Cube />
                 </div>
             </div>
-            <div className='w-full flex justify-end'>
+            <div className='w-full flex justify-end z-50'>
                 <WorkWithMe />
             </div>
-            <div className={`transition-all duration-700 ${click ? 'top-[52%] rotate-180' : ' top-[42%] rotate-0'} absolute font-GIT  justify-center cursor-pointer`} onClick={handelScrollToSkill}
+            <div className={`transition-all duration-700 ${click ? 'top-[52%] rotate-180' : ' top-[42%] rotate-0'} absolute font-GIT  justify-center cursor-pointer`}
             >
                 <div className={`transition-all duration-200 text-[1.2rem] w-full ${click && 'rotate-180'}`}>My Ability</div>
                 <div className=' transition-all duration-500 flex justify-center text-[1.6rem] up'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
@@ -130,7 +130,7 @@ const Home = () => {
                 <div className='transition-all duration-500 flex justify-center text-[1.6rem] end'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
             </div>
 
-            <div ref={skill} className='w-full h-[100vh] flex gap-2 justify-center items-end'>
+            <div ref={skill} className='w-full [100vh] flex gap-2 justify-center z-10'>
                 <div className={`w-[40%] h-[75%] text-center font-GIT `}>
                     <div className={`transition-all flex items-center justify-between p-2 text-[1.2rem] mb-2 duration-300 rounded-sm  ${dark ? ' bg-white text-black' : 'bg-black text-white'}`}>
                         Programming Languages

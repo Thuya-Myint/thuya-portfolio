@@ -37,7 +37,7 @@ export const Implementations = [
     },
     {
         id: 'imp2',
-        Frontend: 'React',
+        Frontend: 'React, Recoil',
         Backend: 'not neccessary',
         Database: 'not neccessary',
         Available: 'mobile,ipad, laptop',

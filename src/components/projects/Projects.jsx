@@ -224,29 +224,32 @@ const Projects = () => {
                 </div>
 
 
-                <div className={`transition-all relative duration-500 ${name !== '' ? 'scale-100 opacity-100' : 'scale-0 opacity-0'} font-GIT w-[50%] p-4  `}>
-                    <div className={`transition-all absolute  ${project === 1 && 'top-[6%]'}  ${project === 2 && 'top-[19%]'}  ${project === 3 && 'top-[34%]'}  ${project === 4 && 'top-[55%]'} ${project === 5 && 'top-[73%]'} ${project === 6 && 'top-[90%]'} rounded-md duration-500 w-[90%] h-fit text-[1.2rem]  p-4 bg-opacity-20 ${dark ? 'bg-white' : 'bg-black'}`}>
-                        <div className='opacity-45 '>Implementations of {name}</div>
-                        <div className='w-full text-[1rem] mt-2 flex justify-between'>
-                            <div className=''>Frontend</div>
-                            <div className=''>{Implementations[project - 1].Frontend}</div>
+                {
+                    project > 0 &&
+                    <div className={`transition-all relative duration-500 ${name !== '' ? 'scale-100 opacity-100' : 'scale-0 opacity-0'} font-GIT w-[50%] p-4  `}>
+                        <div className={`transition-all absolute  ${project === 1 && 'top-[6%]'}  ${project === 2 && 'top-[19%]'}  ${project === 3 && 'top-[34%]'}  ${project === 4 && 'top-[55%]'} ${project === 5 && 'top-[73%]'} ${project === 6 && 'top-[90%]'} rounded-md duration-500 w-[90%] h-fit text-[1.2rem]  p-4 bg-opacity-20 ${dark ? 'bg-white' : 'bg-black'}`}>
+                            <div className='opacity-45 '>Implementations of {name}</div>
+                            <div className='w-full text-[1rem] mt-2 flex justify-between'>
+                                <div className=''>Frontend</div>
+                                <div className=''>{Implementations[project - 1].Frontend}</div>
+                            </div>
+                            <div className='w-full text-[1rem] mt-2 flex justify-between'>
+                                <div className=''>Backend</div>
+                                <div className=''>{Implementations[project - 1].Backend}</div>
+                            </div>
+                            <div className='w-full text-[1rem] mt-2 flex justify-between'>
+                                <div className=''>Database</div>
+                                <div className='w-[80%] text-end'>{Implementations[project - 1].Database}</div>
+                            </div>
+                            <div className='w-full text-[1rem] mt-2 flex justify-between'>
+                                <div className=''>Available</div>
+                                <div className=''>{Implementations[project - 1].Available}</div>
+                            </div>
                         </div>
-                        <div className='w-full text-[1rem] mt-2 flex justify-between'>
-                            <div className=''>Backend</div>
-                            <div className=''>{Implementations[project - 1].Backend}</div>
-                        </div>
-                        <div className='w-full text-[1rem] mt-2 flex justify-between'>
-                            <div className=''>Database</div>
-                            <div className='w-[80%] text-end'>{Implementations[project - 1].Database}</div>
-                        </div>
-                        <div className='w-full text-[1rem] mt-2 flex justify-between'>
-                            <div className=''>Available</div>
-                            <div className=''>{Implementations[project - 1].Available}</div>
-                        </div>
+
+
                     </div>
-
-
-                </div>
+                }
 
             </div>
         </div >
