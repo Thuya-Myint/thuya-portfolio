@@ -3,7 +3,6 @@ import NavBar from '../navbar/NavBar'
 import { darkState } from '../state/atom'
 import { useRecoilValue } from 'recoil'
 import { FaCode } from "react-icons/fa6";
-import { TbDevicesCode } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 import { FaNodeJs } from "react-icons/fa";
 import { SiMongodb } from "react-icons/si";
@@ -20,7 +19,10 @@ import { FaComputer } from "react-icons/fa6";
 import { FaJava } from "react-icons/fa6";
 import { FaPython } from "react-icons/fa6";
 import { SiCplusplusbuilder } from "react-icons/si";
-
+import jlptN2 from '../../assets/certificate/Jlpt n2.png'
+import itpecFe from '../../assets/certificate/Itpec FE.jpeg'
+import cloud from '../../assets/certificate/cloud.png'
+import softeng from '../../assets/certificate/software engineering.png'
 const Home = () => {
    const active = 1;
    const dark = useRecoilValue(darkState)
@@ -67,7 +69,7 @@ const Home = () => {
          <div ref={intro} className='w-full h-[92vh] flex '>
             <div className='w-2/3 font-GIT flex flex-col mt-[10%] p-4'>
                <div className='text-[2.5rem] opacity-65'>Hello! My name is Thuyamyint.</div>
-               <div className='text-[1.5rem] flex items-center flex-wrap'>I'm a Beginner Full-Stack WEB <FaCode className='mx-2' /> Developer! , Mobile <TbDevicesCode className='mx-2' /> Creator! & StandAlone <FaComputer className='mx-2' /> Developer!
+               <div className='text-[1.5rem] flex items-center flex-wrap'>I'm a Beginner Full-Stack WEB <FaCode className='mx-2' /> Developer! & StandAlone <FaComputer className='mx-2' /> Developer!
                </div>
                <div className='text-[1.4rem]'>
                   My main Languages include following
@@ -119,7 +121,7 @@ const Home = () => {
             </div>
          </div>
 
-         <div className={`transition-all duration-700 ${click ? 'top-[52%] rotate-180' : ' top-[42%] rotate-0'} absolute font-GIT  justify-center cursor-pointer`}
+         <div className={`transition-all duration-700  mb-4 font-GIT  justify-center cursor-pointer`}
          >
             <div className={`transition-all duration-200 text-[1.2rem] w-full ${click && 'rotate-180'}`}>My Ability</div>
             <div className=' transition-all duration-500 flex justify-center text-[1.6rem] up'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
@@ -141,6 +143,32 @@ const Home = () => {
                   <TbLanguageHiragana className={`text-[1.3rem] ${dark ? 'text-red-700' : 'text-blue-500'}`} />
                </div>
                <Progress />
+            </div>
+         </div>
+         <div className={`transition-all duration-700  mb-4 font-GIT  justify-center cursor-pointer`}
+         >
+            <div className={`transition-all duration-200 text-[1.2rem] w-full ${click && 'rotate-180'}`}>My Certificate</div>
+            <div className=' transition-all duration-500 flex justify-center text-[1.6rem] up'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
+            <div className='transition-all duration-500 flex justify-center text-[1.6rem] mid'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
+            <div className='transition-all duration-500 flex justify-center text-[1.6rem] end'><IoIosArrowDown className={`${dark ? 'text-red-700' : 'text-blue-700'}`} /></div>
+         </div>
+         <div className='w-full p-10 font-GIT'>
+            <div className={` text-[1.3rem] w-full ${dark ? 'bg-white' : 'bg-black'} bg-opacity-25 p-2`}>Certificate</div>
+            <div className=''>
+               <div className='my-4 italic'>Japanese Language</div>
+               <img src={jlptN2} alt="" className='w-[30%]' />
+            </div>
+            <div className=''>
+               <div className='my-4 italic'>ITPEC FE</div>
+               <img src={itpecFe} alt="" className='w-[30%]' />
+            </div>
+            <div className=''>
+               <div className='my-4 italic'>Introduction to Cloud Computing</div>
+               <img src={cloud} alt="" className='w-[50%]' />
+            </div>
+            <div className=''>
+               <div className='my-4 italic'>Software Engineering Essentials</div>
+               <img src={softeng} alt="" className='w-[50%]' />
             </div>
          </div>
          <a
